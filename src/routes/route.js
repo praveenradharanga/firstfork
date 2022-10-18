@@ -45,7 +45,7 @@ router.get('/movies/:indexNumber', function (req, res) { //param
     "id": 4,
     "name": "Finding Nemo"
 }] 
-    router.get('/films', function (req, res) { //query
+   /* router.get('/films', function (req, res) { //query
     res.send(classics)
     
    /* function me(){
