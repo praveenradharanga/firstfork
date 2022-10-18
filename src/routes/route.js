@@ -1,13 +1,80 @@
 const express = require('express');
 const abc = require('../introduction/intro')
-const cinema = require('../movies/movies')
+//const cinema = require('../movies/movies')
 const router = express.Router();
 
-router.get('/movies/:indexNumber',cinema.indexNumber)
+/*router.get('/movies/:indexNumber',cinema.indexNumber)
 router.get('/cult',cinema.cult)
-router.get('/idvalue',cinema.idValue)
+router.get('/idvalue',cinema.idValue)*/
 
+//________________________________1st problem___________________________
+/*1. Create an API for GET /movies that returns a list of movies. Define an array of
+movies in your code and return the value in response.*/
 
+const arrayMovies = ["Rang de basanti", "The shining", "Lord of the rings", "Batman begins"]
+router.get('/movies', function (req, res) { //query
+ res.send(arrayMovies)
+});
+
+//________________________________2nd 3rd problem___________________________
+
+const indMovies = ["Rang de basanti", "The shining", "Lord of the rings", "Batman begins"]
+
+router.get('/movies/:indexNumber', function (req, res) { //param
+    const index = req.params.indexNumber
+    if((index) > (indMovies.length -1) ){
+        res.send("invalid index value")
+    } else {
+        res.send(indMovies[index])
+    }
+
+ });
+   
+  //router.get('/films/:filmId', function (req, res) { //param
+
+ let classics = [ {
+    "id": 1,
+    "name": "The Shining"
+    }, {
+    "id": 2,
+    "name": "Incendies"
+    }, {
+    "id": 3,
+    "name": "Rang de Basanti"
+    }, {
+    "id": 4,
+    "name": "Finding Nemo"
+}] 
+    router.get('/films', function (req, res) { //query
+    res.send(classics)
+    
+   /* function me(){
+        return classics
+    }
+    /*function idValue (){
+        let idValue = req.params.idValue
+        if(idValue>classics.id.length-1||idValue<=0){
+           res.send("invalid id value")
+        }
+        res.send(classics[idValue])
+     } 
+    */
+    
+
+//________________________________3rd problem___________________________
+
+/*const movieArr = ["Rang de basanti", "The shining", "Lord of the rings", "Batman begins"]
+
+router.get('/movies/:indexNumbers', function (req, res) { //param
+    
+    const index = req.params.indexNumbers
+    
+    if((index) > (movieArr.length -1) ){
+    res.send("invalid index value")
+} else {
+    res.send(movieArr[index])
+}
+})*/
 
 router.get('/test-me', function (req, res) {
     console.log('My batch is', abc.name)
