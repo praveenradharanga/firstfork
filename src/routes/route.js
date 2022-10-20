@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/students/:name', function(req, res) {
+/*router.get('/students/:name', function(req, res) {
     let studentName = req.params.name
     console.log(studentName)
     res.send(studentName)
@@ -157,7 +157,51 @@ router.post( "/post-query-2", function (req, res){
         if ( myArr[i] > input )     finalArr.push( myArr[i])
     }
     res.send( {data: finalArr , status: true})
+})*/
+
+// ASSIGNMENT:
+// you will be given an array of persons ( i.e an array of objects )..each person will have  a {name: String , age: Number, votingStatus: true/false(Boolean)}
+// take input in query param as votingAge..and for all the people above that age, change votingStatus as true
+// also return an array consisting of only the person that can vote
+
+let persons = [
+    {
+        name: "PK",
+        age: 10,
+        votingStatus: false
+    },
+    {
+        name: "SK",
+        age: 20,
+        votingStatus: false
+    },
+    {
+        name: "AA",
+        age: 70,
+        votingStatus: false
+    },
+    {
+        name: "SC",
+        age: 5,
+        votingStatus: false
+    },
+    {
+        name: "HO",
+        age: 40,
+        votingStatus: false
+    }
+]
+
+router.post('/eligibility', function (req, res) { // POST | localhost:3000/eligibility?votingAge=18
+    const votingAge = req.query.votingAge
+    const updatedList = []
+
+    persons.forEach((person) => {
+        if (person.age >= votingAge) {
+            person.votingStatus = true
+            updatedList.push(person)
+        }
+    })
+    return res.send({ updatedList: updatedList })
 })
-
-
 module.exports = router;
