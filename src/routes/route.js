@@ -101,15 +101,30 @@ let players = [
 ]
 
 router.post('/players', function (req, res) {
-     const playerBio = players.find(player => player.name === body.name)
+    
+    let newPlayer = req.body
+    let newPlayersName = newPlayer.name
+    let isNameRepeated = false
 
-    if (playerBio) {
-         res.send({ message: "player already exists" })
-    } else {
-        players.push(body)
-         res.send(players)
+    //let player = players.find(p => p.name == newPlayersName)
+
+    for(let i = 0; i < players.length; i++) {
+        if(players[i].name == newPlayersName) {
+            isNameRepeated = true;
+            break;
+        }
     }
 
-})
+    //undefined is same as false/ a falsy value
+    if (isNameRepeated) {
+        //Player exists
+        res.send("This player was already added!")
+    } else {
+        //New entry
+        players.push(newPlayer)
+        res.send(players)
+    }
+});
+
 
 module.exports = router;
