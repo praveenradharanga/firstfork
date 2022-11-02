@@ -64,7 +64,10 @@ next time when you request your profile page..token is checked ..if correct you 
 
 intro
 
-<!-- ASSIGNMENT:- -->
+<!-- ASSIGNMENT:- --> 31/10/2022
+Summary video for today's content :
+ https://drive.google.com/file/d/1VXSqamyK9PrbSX0JQXeWjC0mcWpMnvsc/view?usp=sharing
+
 Write a middleware that logs (console.log) some data everytime any API is hit
 Data to be logged:-the current timestamp(as date time) , the IP of the user and the route being requested).
 For this first figure out how to get the route location being requested, how to get current timestamp and how to get the IP.
