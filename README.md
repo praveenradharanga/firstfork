@@ -78,3 +78,6 @@ time , IP, Route should be printed on each line in terminal( every time an api i
 2010-08-19 14:00:00 , 123.459.898.734 , /createUser
 2010-08-19 14:00:00 , 123.459.898.734 , /basicAPi
 2010-08-19 14:00:00 , 123.459.898.734 , /falanaAPI
+
+Solution Video
+https://drive.google.com/file/d/1nLjeREq4CLyj6jgbfX0oSraeRjiJVdzp/view?usp=sharing  
