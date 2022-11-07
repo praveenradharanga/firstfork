@@ -8,7 +8,7 @@ const createAuthor= async function (req, res) {
 
 const getAuthorsData= async function (req, res) {
     let authors = await AuthorModel.find()
-    res.send({data: authors})
+    res.send({data: authors}) 
 }
 
 module.exports.createAuthor= createAuthor
