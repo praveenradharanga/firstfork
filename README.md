@@ -76,4 +76,7 @@ For paid app user and the user has insufficient balance. We send an error that t
 For free app user, we dont check user's balance and create the order with 0 amount.
 
 
+solution avilable in lab //midewear 2
+
+
 
