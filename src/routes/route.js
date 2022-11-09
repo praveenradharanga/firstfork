@@ -14,17 +14,6 @@ const useerController= require("../controllers/useerController")
 
 module.exports = router;
 
-
-
-
-
-
-
-
-
-
-
-
 // router.get("/test-me", function (req, res) {
 //     res.send("My first ever api!")
 // })
